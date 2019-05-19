@@ -2,21 +2,30 @@
   <section class="searchWrapper">
     <input type="search"
            name="search"
-           id="search"
            placeholder="e.g. Titan"
-           v-model='searchValue'
-           v-on:input="handleInput">
+           v-bind:class="{ dark }"
+           v-bind:value="value"
+           v-on:input="handleChange">
   </section>
 </template>
 
 <script>
 export default {
   name: 'SearchInput',
-  data() {
-    return {
-      searchValue: '',
-      results: [],
-    };
+  props: {
+    value: {
+      type: String,
+      required: true,
+    },
+    dark: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  methods: {
+    handleChange(e) {
+      this.$emit('input', e.target.value);
+    },
   },
 };
 </script>
@@ -29,10 +38,32 @@ export default {
     width: 250px;
 
     input {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 300;
     height: 50px;
     border: none;
     border-bottom: 1px solid white;
     background: none;
+    transition: box-shadow 0.3s;
+    color: white;
     }
+
+    input:hover,
+    input:focus {
+      outline: none;
+      box-shadow: 0 15px 15px -13px rgba(255, 255, 255, 0.6);
+    }
+  }
+
+  .dark {
+    color: #1e3d4a !important;
+    border-bottom-color: #1e3d4a !important;
+  }
+
+  .dark:hover,
+  .dark:focus {
+    outline: none;
+    box-shadow: 0 15px 15px -13px rgba(#1e3d4a, 0.6) !important;
   }
 </style>
