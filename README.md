@@ -1,34 +1,5 @@
 # spacer-helloroman
 
-## Project setup
-```
-npm install
-```
+Live: https://nostalgic-khorana-2a0766.netlify.com/#/
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Run your unit tests
-```
-npm run test:unit
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Na podstawie https://www.youtube.com/playlist?list=PLKnxnWdLGM49Lf7V-nl5zKf-JNMlZpACA
